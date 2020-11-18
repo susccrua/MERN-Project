@@ -1,5 +1,7 @@
 import { Avatar, Input } from '@material-ui/core'
 import React, { useState } from 'react'
+import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
+import VideocamIcon from '@material-ui/icons/Videocam';
 import './MessageSender.css'
 
 const MessageSender = () => {
@@ -41,9 +43,15 @@ const MessageSender = () => {
             </div>
 
             <div className="messageSender__bottom">
-                <div></div>
+                <div className="messageSender__option">
+                    <VideocamIcon style={{ color: 'red' }} />
+                    <h3>Live Video</h3>
+                </div>
+                <div className="messageSender__option">
+                    <AddAPhotoIcon style={{ color: 'green' }} />
+                    <h3>Photo/Video</h3>
+                </div>
             </div>
-
         </div>
     )
 }

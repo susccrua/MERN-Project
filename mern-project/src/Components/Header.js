@@ -2,12 +2,11 @@ import React from 'react'
 import logo from './eye.png';
 import SearchIcon from '@material-ui/icons/Search';
 import ForumIcon from '@material-ui/icons/Forum';
-import DescriptionIcon from '@material-ui/icons/Description';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import AddIcon from '@material-ui/icons/Add';
+import HomeIcon from '@material-ui/icons/Home';
+import PeopleIcon from '@material-ui/icons/People';
 import { Avatar, IconButton } from '@material-ui/core';
 
 import './Header.css';
@@ -25,16 +24,13 @@ const Header = () => {
             </div>
             <div className="header__center">
                 <div className="header__option">
+                    <HomeIcon />
+                </div>
+                <div className="header__option">
                     <ForumIcon />
                 </div>
                 <div className="header__option">
-                    <DescriptionIcon />
-                </div>
-                <div className="header__option">
-                    <GitHubIcon />
-                </div>
-                <div className="header__option">
-                    <LinkedInIcon />
+                    <PeopleIcon />
                 </div>
             </div>
 
