@@ -16,7 +16,37 @@ const MessageSender = () => {
     }
 
     const handleSubmit = () => {
-        console.log('Submit');
+        e.preventDefault()
+
+        if (image) {
+            const imgForm = new FormData()
+            imgForm.append('file', image, image.name)
+
+            axios.post('/upload/image', imgForm, {
+                headers: {
+                    'accept': 'application/json',
+                    'Accept-Lamguage': 'en-US,en;q=0.8',
+                    'Content-Type': `multipart/form-data; boundary=${imgForm._boundary}`,
+                }
+            }).then((res) => {
+                console.log(res.data)
+
+                const postData = {
+                    text: input,
+                    imgName: res.data.filename,
+                    user: user.displayName,
+                    avatar: user.photoURL,
+                    timestamp: Date.now()
+                }
+                console.log(postData)
+                savePost(postData)
+            })
+        }
+
+        setImageUrl('')
+        setInput('')
+        setImage(null)
+
     }
 
     return (
